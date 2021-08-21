@@ -20,7 +20,7 @@ export const activate = async (context: ExtensionContext): Promise<void> => {
   );
 
   events.on('CompleteDone', async (item: VimCompleteItem) => {
-    if (item.user_data !== 'ultisnips') {
+    if (item.menu !== '[ultisnips]') {
       return;
     }
 
@@ -50,7 +50,6 @@ const getCompletionItems = async (): Promise<CompleteResult> => {
         word,
         info: `[${info.description}]\n\n${snipText.join('\n')}`,
         menu: '[ultisnips]',
-        user_data: 'ultisnips',
       };
     }),
   };

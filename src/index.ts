@@ -50,7 +50,9 @@ const getCompletionItems = async (): Promise<CompleteResult> => {
         word,
         info: `[${info.description}]\n\n${snipText.join('\n')}`,
         menu: '[ultisnips]',
+        dup: 1,
       };
     }),
+    priority: 300,
   };
 };

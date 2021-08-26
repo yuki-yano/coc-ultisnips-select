@@ -12,7 +12,13 @@ export const activate = async (context: ExtensionContext): Promise<void> => {
   context.subscriptions.push(
     sources.createSource({
       name: 'ultisnips source',
-      doComplete: async () => {
+      doComplete: async (option) => {
+        if (option.input === '') {
+          return {
+            items: [],
+          };
+        }
+
         const items = await getCompletionItems();
         return items;
       },
@@ -53,6 +59,6 @@ const getCompletionItems = async (): Promise<CompleteResult> => {
         dup: 1,
       };
     }),
-    priority: 300,
+    priority: 1000,
   };
 };

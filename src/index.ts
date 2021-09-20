@@ -11,7 +11,7 @@ type Snippets = {
 export const activate = async (context: ExtensionContext): Promise<void> => {
   context.subscriptions.push(
     sources.createSource({
-      name: 'ultisnips source',
+      name: 'ultisnips-select',
       doComplete: async (option) => {
         if (option.input === '') {
           return {
@@ -59,6 +59,5 @@ const getCompletionItems = async (): Promise<CompleteResult> => {
         dup: 1,
       };
     }),
-    priority: 1000,
   };
 };

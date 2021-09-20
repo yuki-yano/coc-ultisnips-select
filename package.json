@@ -41,20 +41,12 @@
   "contributes": {
     "configuration": {
       "type": "object",
-      "title": "coc-ultisnips-select configuration",
       "properties": {
-        "coc-ultisnips-select.enabled": {
-          "type": "boolean",
-          "default": true,
-          "description": "Enable coc-ultisnips-select extension"
+        "coc.source.ultisnips-select.priority": {
+          "type": "integer",
+          "default": 100
         }
       }
-    },
-    "commands": [
-      {
-        "command": "coc-ultisnips-select.Command",
-        "title": "coc-ultisnips-select command title"
-      }
-    ]
+    }
   }
 }

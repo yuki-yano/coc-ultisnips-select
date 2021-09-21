@@ -9,6 +9,10 @@ type Snippets = {
 };
 
 export const activate = async (context: ExtensionContext): Promise<void> => {
+  const extensionConfig = workspace.getConfiguration('ultisnips-select');
+  const isEnable = extensionConfig.enable;
+  if (!isEnable) return;
+
   context.subscriptions.push(
     sources.createSource({
       name: 'ultisnips-select',

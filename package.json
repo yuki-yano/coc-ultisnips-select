@@ -42,6 +42,11 @@
     "configuration": {
       "type": "object",
       "properties": {
+        "ultisnips-select.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable coc-ultisnips-select extension"
+        },
         "coc.source.ultisnips-select.priority": {
           "type": "integer",
           "default": 100

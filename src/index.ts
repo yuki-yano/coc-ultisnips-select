@@ -8,10 +8,12 @@ type Snippets = {
   };
 };
 
+const sourceName = 'ultisnips-select';
+
 export const activate = async (context: ExtensionContext): Promise<void> => {
   context.subscriptions.push(
     sources.createSource({
-      name: 'ultisnips-select',
+      name: sourceName,
       doComplete: async (option) => {
         if (option.input === '') {
           return {
@@ -26,7 +28,7 @@ export const activate = async (context: ExtensionContext): Promise<void> => {
   );
 
   events.on('CompleteDone', async (item: VimCompleteItem) => {
-    if (item.menu !== '[ultisnips]') {
+    if (item.source !== sourceName) {
       return;
     }
 

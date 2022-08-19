@@ -61,7 +61,6 @@ const getCompletionItems = async (): Promise<CompleteResult> => {
       return {
         word,
         info: `[${info.description}]\n\n${snipText.join('\n')}`,
-        menu: '[ultisnips]',
         dup: 1,
       };
     }),

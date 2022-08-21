@@ -59,6 +59,7 @@ const getCompletionItems = async (): Promise<CompleteResult> => {
       }
 
       return {
+        kind: ' ',
         word,
         info: `[${info.description}]\n\n${snipText.join('\n')}`,
         dup: 1,
